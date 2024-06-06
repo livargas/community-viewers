@@ -1,0 +1,11 @@
+config:
+  target: "https://api.koyag.app/comunidaddigital"
+  phases:
+    - duration: 1
+      arrivalCount: 1
+ 
+scenarios:
+  - name: Get Events
+    flow:
+      - get:
+          url: "/events"

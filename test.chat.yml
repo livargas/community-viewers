@@ -1,0 +1,16 @@
+config:
+  target: "https://prod-studio-api.fly.dev/api/v1/streaming/weavy/6fe07c3e-9114-464e-a442-d1d08e8e03e9"
+  phases:
+    - duration: 1
+      arrivalRate: 30
+  processor: "./processor.js"
+  variables:
+    data: "./data.json"
+
+scenarios:
+  - flow:
+      - log: "Iniciando test"
+      - post:
+          url: "/user"
+          beforeRequest: "setUserData"
+          json: "{{ userData }}"
