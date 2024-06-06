@@ -1,0 +1,17 @@
+config:
+  target: "https://dev-activity-viewers.fly.dev?communitySubdomain=k-community"
+  phases:
+    - duration: 50
+      arrivalRate: 5
+  engines:
+   socketio-v3:
+    extraHeaders:
+        Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDUxZDE4Y2ZiY2JiMWFlYzkwZjRjN2Q1YmM3OGNhZjc1ZWVlNjRmZTNmZWIyNDA0ZTQ3ZDEzZTQ0N2ZkYzBmNThiODgxMDAxOWViNzRkZGIiLCJpYXQiOjE3MTIyNDgxMDIuOTc1MzEzLCJuYmYiOjE3MTIyNDgxMDIuOTc1MzE0LCJleHAiOjE3NDM3ODQxMDIuOTY3ODgzLCJzdWIiOiJmZGU5MmVjMC1lNWI5LTQyNDgtYjU0Zi1lOTJkMTY1NTFlODMiLCJzY29wZXMiOltdfQ.afOH7MKi2SrU5IgxDW6ITrcaFEbhb9UohF4xEO6wNHdkLhDDqRNnKbu9ft9zHcatX6FvneAwJen-8XtGzOr84nIquIm5NCVyufSWnmonanZ4D6CxtX0nFaa08hKxvhbY1Mcm50gW2e2jkSRGrrPMhguiPy68HU3NBAc30JvOUgfrC-I1Mnie7K_20SEO-STbsNP2Ynb6ZTM9YhUiPqlil5U-a_omOd9QhfafhVFeF1wMaXazaM63zUd18kRBTdno111aZvDILHkner18e4QH_ioI-4WB-v46IEC6nlrsikhT9krdfFuwF1SslMzybG7cpAiZIWj_sSNovB4wmRgjpcNnIXoMzzeGGV5m9pKUrMaVLikp9kfr066UMYrMUZE3Ch5cSu1Mg_D665XnLDbk6lTqPA2IHzr8Kbjk8vRY_qnUwUratsAPywifGMaDhK9wCA0_Yi2Ie8Kk_gFGL2m8ls1KIDMZ0JQFCIZgElacY7N4sHj5qPtQ9V2VcAS6M5BNeGm0WZHX4EyZJ_cfVPypMx0humN5gL1Yc69tazlE3eVy5ew9nTPOApzDAYOXX8t_7RQdQ1CePv2jPMDj3LwVbbtKq1ZUrkscTkpNM94rOG-dglBfkY7T7MZh3ZlqP-45z65oB0PadHoaCqUsA2ChfBJUF7EQPmXtipI_FHtE3iw"
+
+scenarios:
+  - name: My sample scenario
+    engine: socketio-v3
+    flow:
+      - think: 2
+      - emit: ["connectToServer", {"activityId": "40dc807c-a951-472b-a312-82ea0594b9a3", "status": "onwait", "unique": true}]
+      - think: 360
