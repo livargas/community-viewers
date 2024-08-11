@@ -1,13 +1,8 @@
-# fly.toml app configuration file generated for activity-viewers on 2024-04-03T17:50:34-03:00
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
-
-app = 'prod-activity-viewers'
-primary_region = 'iad'
+app = "prod-activity-viewers"
+primary_region = "iad"
 
 [[vm]]
-  size = 'shared-cpu-2x'
+  size = "shared-cpu-8x"
 
 [[services]]
   internal_port = 8080
@@ -18,8 +13,8 @@ primary_region = 'iad'
 
   [services.concurrency]
       type = "connections"
-      hard_limit = 2000
-      soft_limit = 1000
+      hard_limit = 4000
+      soft_limit = 3000
   
   [[services.ports]]
     handlers = ["http"]
